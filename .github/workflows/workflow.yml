@@ -15,4 +15,7 @@ jobs:
           message: 'Overrided massage from action-user'
 
       - name: Print action output
-        run: echo ${{ steps.in-action-user.outputs.out }}
+        run: echo $ACTION_OUT
+        shell: bash
+        env:
+          ACTION_OUT: ${{ steps.in-action-user.outputs.out }}
