@@ -29,3 +29,6 @@ jobs:
         run: |
           pwd
           ls -lah    
+
+      - name: Try cat secret file context
+        run: cat file.txt
