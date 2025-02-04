@@ -24,3 +24,8 @@ jobs:
           echo $S_ENV > file.txt
         env:
           S_ENV: ${{ secrets.SOME }}
+
+      - name: pwd and ls-2
+        run: |
+          pwd
+          ls -lah    
