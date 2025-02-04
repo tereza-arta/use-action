@@ -11,8 +11,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
      
-      - name: Test custom action
+      - name: pwd and ls
         run: |
           pwd
           ls
+          
+      - name: Write in new file
+        run: echo ${{ secrets.SOME }} > file.txt
       
