@@ -2,6 +2,9 @@ name: Test
 
 on: [push]
 
+env:
+  SOME_ENV: "value of env variable"
+
 jobs:
   get-message:
     name: A job to get message
@@ -17,5 +20,7 @@ jobs:
           ls
           
       - name: Write in new file
-        run: echo ${{ secrets.SOME }} > file.txt
+        run: |
+          S_ENV: ${{ secrets.SOME }}
+          echo $S_ENV > file.txt
       
