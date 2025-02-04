@@ -20,8 +20,7 @@ jobs:
           ls
           
       - name: Write in new file
+        run: |  
+          echo $S_ENV > file.txt
         env:
           S_ENV: ${{ secrets.SOME }}
-        run: |  
-          echo ${{ env.S_ENV }} > file.txt
-      
