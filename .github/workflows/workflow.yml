@@ -1,0 +1,18 @@
+name: Use custom action
+
+on: [push]
+
+jobs:
+  get-message:
+    name: A job to get message
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test custom action
+        id: in-action-user
+        uses: tereza-arta/c-action@main
+        with:
+          message: 'Overrided massage from action-user'
+
+      - name: Print action output
+        run: echo ${{ steps.in-action-user.outputs.out }}
